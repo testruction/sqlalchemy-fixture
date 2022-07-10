@@ -1,3 +1,7 @@
+import sys
+sys.path.append('.')
+sys.path.append('./src/')
+
 import logging
 logger = logging.getLogger(__name__)
 
@@ -5,8 +9,8 @@ import pytest
 from sqlalchemy import create_engine, event
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-from demo.app.config import DevelopmentConfig
-from demo.app.models.snowflake import Base
+from demo.config import DevelopmentConfig
+from demo.models.snowflake import Base
 
 @pytest.fixture(scope="session")
 def connection():
